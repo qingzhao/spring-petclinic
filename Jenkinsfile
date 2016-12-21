@@ -7,6 +7,7 @@ node('jnlp-slave') {
   
 
    stage('get token'){
+       sh 'chmod +x ./spring-petclinic/api.sh'
        sh 'exec ./spring-petclinic/api.sh'
    }
 }
