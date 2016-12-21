@@ -7,6 +7,6 @@ node('jnlp-slave') {
   
 
    stage('get token'){
-       sh 'exec ./api.sh'
+       sh 'exec ./spring-petclinic/api.sh'
    }
 }
