@@ -1,6 +1,8 @@
 node('jnlp-slave') {
   stage('Prepare') {
-	git ' https://github.com/qingzhao/spring-petclinic.git '
+      sh "rm spring-petclinic -r"    
+      sh "git clone https://github.com/qingzhao/spring-petclinic.git"
+	
   }
   
 
