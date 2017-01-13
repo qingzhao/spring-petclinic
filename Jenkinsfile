@@ -20,6 +20,7 @@ node('jnlp-slave') {
        sh 'exec ./spring-petclinic/create_service.sh'
    }
    stage('test'){
-	
+       sh 'chmod +x ./spring-petclinic/addOwner.sh'
+       sh 'exec ./spring-petclinic/addOwner.sh'
    }
 }
