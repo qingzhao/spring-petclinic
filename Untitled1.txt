@@ -1,0 +1,10 @@
+CMD ["/spring-petclinic/mvnw", "tomcat7:run", "-P" ,"MySQL
+
+
+http://zqz-b1.nos-eastchina1.126.net/dockerfile-tomcat.txt
+
+
+/work/mvnw tomcat7:run -P MySQL
+
+
+"]
