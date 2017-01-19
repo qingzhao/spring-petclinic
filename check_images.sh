@@ -36,9 +36,9 @@ check_time(){
 	branch=master
 	length=${#branch}
 
-
+        echo "length " $length >length.txt
 	name=$(cat images.txt|grep "tags" -A 50|head -n 5|grep name|awk -F '"' '{print $4}')
-	echo "name " $name
+	echo "name " $name >name.txt
 	timestr=${name:$length}
 
 	secondstr=${timestr::14}
@@ -97,7 +97,7 @@ check(){
 
 	done
 
-	check_status
+	#check_status
 
 }
 check
