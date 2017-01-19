@@ -32,7 +32,31 @@ compare_time(){
 }
 check_time(){
 
-	curl -X GET -H "Content-Type: application/json" -H "$token" "https://open.c.163.com/api/v1/repositories/$repo_id" |python2 -m json.tool > images.txt                                                      
+	curl -X GET -H "Content-Type: application/json" -H "$token" "https://open.c.163.com/api/v1/repositories/$repo_id" |python2 -m json.tool > images.txt
+	branch=master
+	length=${#branch}
+
+
+	name=$(cat images.txt|grep "tags" -A 50|head -n 5|grep name|awk -F '"' '{print $4}')
+	echo "name " $name
+	timestr=${name:$length}
+
+	secondstr=${timestr::14}
+	time1=$(date -d $secondstr +%s)
+
+#20161230054238
+
+	formatstr=${secondstr::4}'-'${secondstr:4:2}'-'${secondstr:6:2}' '${secondstr:8:2}':'${secondstr:10:2}':'${secondstr:12:2}
+
+	buildtime=$(date -d "$formatstr" +%s)
+
+	#ret=`compare_time $buildtime $currenttime`
+        echo 0
+}
+
+check_time2(){
+
+	curl -X GET -H "Content-Type: application/json" -H "$token" "https://open.c.163.com/api/v1/repositories/$repo_id" |python2 -m json.tool > images.txt
 
 	branch=master
 	length=${#branch}
@@ -53,7 +77,6 @@ check_time(){
 	ret=`compare_time $buildtime $currenttime`
         echo $ret
 }
-
 
 
 check(){
