@@ -25,7 +25,8 @@ compare_time(){
 		echo 0
 	else
 		#echo "$1 < $2"
-		echo 1
+		#echo 1
+		echo 0
 	fi
 
 }
