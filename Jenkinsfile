@@ -22,8 +22,8 @@ node('jnlp-slave') {
    stage('unit test'){
       sh "cd spring-petclinic && mvn test"
    }
-   #stage('test'){
-    #   sh 'chmod +x ./spring-petclinic/addOwner.sh'
-    #   sh 'exec ./spring-petclinic/addOwner.sh'
-   #}
+   stage('test'){
+       sh 'chmod +x ./spring-petclinic/addOwner.sh'
+       sh 'exec ./spring-petclinic/addOwner.sh'
+   }
 }

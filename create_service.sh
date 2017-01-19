@@ -36,4 +36,4 @@ curl -X POST -H "Content-Type: application/json" -H "$token" -d '
                         }
                 ]
         }
-' "https://open.c.163.com/api/v1/microservices"
+' "https://open.c.163.com/api/v1/microservices"|awk -F'"' '{print $4}' > service_id.txt
