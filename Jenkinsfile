@@ -20,6 +20,7 @@ node('jnlp-slave') {
        sh 'exec ./spring-petclinic/create_service.sh'
    }
    stage('unit test'){
+      sh  "apt-get update && apt-get install wget"
       sh  "wget  http://zqz-b1.nos-eastchina1.126.net/settings.xml && cp settings.xml /root/.m2/settings.xml"
       sh "cd spring-petclinic && mvn test"
    }
