@@ -1,10 +1,11 @@
 token=$(cat ./token.file)
+echo "token " $token
 currenttime=`date +%s`
 
 checkCount=30
 
 repo_id=$(curl -X GET -H "Content-Type: application/json" -H "$token" "https://open.c.163.com/api/v1/repositories"  | python2 -m json.tool |grep "ci_test" -C 5  |grep "repo_id" | awk -F":|," '{print $2}')                                                                                                
-
+echo "repo_id " $repo_id
 check_status(){
 	#image_status=$(cat images.txt|grep "tags" -A 50|head -n 5  |grep "status")                                                                                                     
         image_status=$(cat images.txt|grep "tags" -A 50|head -n 5|grep name|awk -F '"' '{print $4}')
