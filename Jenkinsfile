@@ -22,7 +22,7 @@ node('jnlp-slave') {
    stage('unit test'){
       sh  "apt-get update && apt-get install -y wget"
       sh  "wget  http://zqz-b1.nos-eastchina1.126.net/settings.xml && cp settings.xml /root/.m2/settings.xml"
-      sh "cd spring-petclinic && mvn test"
+      sh "cd spring-petclinic && mvn -PMySQL test"
    }
    stage('check service'){
        sh 'chmod +x ./spring-petclinic/check_service.sh'
