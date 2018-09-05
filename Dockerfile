@@ -9,7 +9,7 @@ ENV JAVA_OPTS=-Xmx512m
 ADD http://zqz-b1.nos-eastchina1.126.net/settings.xml /root/.m2/settings.xml
 #RUN ["git", "clone", "https://qingzhao198%40126.com:1725jjz@git.coding.net/sharry198/petclinc.git","/spring-petclinic"]
 #RUN /bin/sh -c "git clone https://qingzhao198%40126.com:1725jjz@git.coding.net/sharry198/petclinc.git /spring-petclinic"
-RUN /bin/sh -c "git clone https://qingzhao198%40126.com:1725jjz@github.com/qingzhao/spring-petclinic.git /spring-petclinic"
+RUN /bin/sh -c "git clone https://github.com/qingzhao/spring-petclinic.git /spring-petclinic"
 
 
 
